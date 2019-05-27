@@ -19,29 +19,29 @@ class Vehicle{
 public class parking {
 	    
     private static Hashtable<Integer,String> type_int = new Hashtable<Integer,String>() {{ put(0, "scooties");
-																					    put(1, "cycle");
-																					    put(2, "sports_bike");
-																					    put(3, "cruiser_bike");
-																					    put(4, "normal_car");
-																					    put(5, "sports_car");
-																					    put(6, "mini_truck");
-																					    put(7, "heavy_truck");
-																					 }};
+			                                                                   put(1, "cycle");
+										           put(2, "sports_bike");
+											   put(3, "cruiser_bike");
+											   put(4, "normal_car");
+											   put(5, "sports_car");
+											   put(6, "mini_truck");
+											   put(7, "heavy_truck");
+											 }};
     
     private static Hashtable<String,Integer> type_string = new Hashtable<String,Integer>() {{ put("scooties", 2);
-																				        put("cycle", 2);
-																				        put("sports_bike", 2);
-																				        put("cruiser_bike", 2);
-																				        put("normal_car", 4);
-																				        put("sports_car", 4);
-																				        put("mini_truck", 6);
-																				        put("heavy_truck", 6);
-																				     }};
+											      put("cycle", 2);
+											      put("sports_bike", 2);
+											      put("cruiser_bike", 2);
+											      put("normal_car", 4);
+											      put("sports_car", 4);
+											      put("mini_truck", 6);
+											      put("heavy_truck", 6);
+												}};
     
-    public static String id_generator(Vehicle vehicle,int floor_number) {	
-    	 String ID;
+//     public static String id_generator(Vehicle vehicle,int floor_number) {	
+//     	 String ID;
     	           	
-     }																	     
+//      }																	     
 																				     
     public static int parkVehicle(Vehicle vehicle) {
     	
