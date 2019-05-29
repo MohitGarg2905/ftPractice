@@ -1,4 +1,4 @@
-package com.fashionTech.pallavBanka.parkingAssignment;
+package fashionTech.pallavBanka.parkingAssignment;
 
 import java.util.Date;
 
@@ -29,6 +29,7 @@ class twoWheelers extends vehicle{
 class scooties extends twoWheelers{
     int regno;
     Date inTime;
+    Date outTime;
     int slotid;
     void drive(){
         if(slotid>30) {
@@ -40,6 +41,7 @@ class scooties extends twoWheelers{
 class cycle extends twoWheelers{
     int regno;
     Date inTime;
+    Date outTime;
     int slotid;
     void drive(){
         if(slotid>30) {
@@ -51,6 +53,7 @@ class cycle extends twoWheelers{
 class sportsBike extends twoWheelers{
     int regno;
     Date inTime;
+    Date outTime;
     int slotid;
     void drive(){
         if(slotid>30) {
@@ -62,6 +65,7 @@ class sportsBike extends twoWheelers{
 class cruiserBike extends twoWheelers{
     int regno;
     Date inTime;
+    Date outTime;
     int slotid;
     void drive(){
         if(slotid>30) {
@@ -86,6 +90,7 @@ class fourWheelers extends vehicle{
 class hatchBack extends fourWheelers{
     int regno;
     Date inTime;
+    Date outTime;
     int slotid;
     void drive(){
         if(slotid>30) {
@@ -97,6 +102,7 @@ class hatchBack extends fourWheelers{
 class sedan extends fourWheelers{
     int regno;
     Date inTime;
+    Date outTime;
     int slotid;
     void drive(){
         if(slotid>30) {
@@ -108,6 +114,7 @@ class sedan extends fourWheelers{
 class sUV extends fourWheelers{
     int regno;
     Date inTime;
+    Date outTime;
     int slotid;
     void drive(){
         if(slotid>30) {
@@ -127,6 +134,7 @@ class sixWheelers extends vehicle{
     }
     int regno;
     Date inTime;
+    Date outTime;
     int slotid;
     void drive(){
         if(slotid>30) {
