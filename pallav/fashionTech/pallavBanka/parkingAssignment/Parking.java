@@ -1,6 +1,7 @@
 package fashionTech.pallavBanka.parkingAssignment;
 
 import java.util.Date;
+import java.util.Timer;
 
 abstract class parking{
     void parkVehicle(vehicle v){
@@ -13,13 +14,23 @@ abstract class parking{
     }
     void getVehicle(vehicle v,int regno){
         v.regno=regno;
-
+        if(v.outTime != null) {
+            //difference in time in milliseconds
+            long diff = v.outTime.getTime() - v.inTime.getTime();
+            long diffHours = diff / (60 * 60 * 1000) % 24;
+            //charges Rs20/hour
+            float totalCharges = 20 * diffHours;
+            System.out.println("Your floor is:" + v.floor + "Your Slot ID is:" + v.slotid + "Your charges are:" + totalCharges);
+        }else
+            System.out.println("The vehicle hasn't left the premises.");
     }
 }
 class vehicle extends parking{
     int regno;
     short floor;
     int slotid;
+    Date inTime;
+    Date outTime;
     void drive(){
 
     }
