@@ -2,7 +2,24 @@ package fashionTech.pallavBanka.parkingAssignment;
 
 import java.util.Date;
 
-class vehicle{
+abstract class parking{
+    void parkVehicle(vehicle v){
+        int regno;
+        short floor;
+        int slotid;
+        regno=v.regno;
+        floor=v.floor;
+        slotid=v.slotid;
+    }
+    void getVehicle(vehicle v,int regno){
+        v.regno=regno;
+
+    }
+}
+class vehicle extends parking{
+    int regno;
+    short floor;
+    int slotid;
     void drive(){
 
     }
