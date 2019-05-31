@@ -1,42 +1,73 @@
 package fashionTech.pallavBanka.parkingAssignment;
 
-import java.util.Date;
-import java.util.Timer;
+import java.util.*;
 
-abstract class parking{
-    void parkVehicle(vehicle v){
-        int regno;
-        short floor;
-        int slotid;
-        regno=v.regno;
-        floor=v.floor;
-        slotid=v.slotid;
-    }
-    void getVehicle(vehicle v,int regno){
-        v.regno=regno;
-        if(v.outTime != null) {
-            //difference in time in milliseconds
-            long diff = v.outTime.getTime() - v.inTime.getTime();
-            long diffHours = diff / (60 * 60 * 1000) % 24;
-            //charges Rs20/hour
-            float totalCharges = 20 * diffHours;
-            System.out.println("Your floor is:" + v.floor + "Your Slot ID is:" + v.slotid + "Your charges are:" + totalCharges);
-        }else
-            System.out.println("The vehicle hasn't left the premises.");
-    }
-}
-class vehicle extends parking{
-    int regno;
-    short floor;
-    int slotid;
+class ParkingCharge {
     Date inTime;
     Date outTime;
+    private Long ParkingTime(Date inTime, Date outTime) {
+        this.inTime = inTime;
+        this.outTime = outTime;
+        if (this.outTime != null) {
+            //difference in time in milliseconds
+            Long diff = outTime.getTime() - inTime.getTime();
+            Long diffHours = diff / (60 * 60 * 1000) % 24;
+            return diffHours;
+        } else{
+            System.out.println("The vehicle hasn't left the premises.");
+            return null;
+        }
+    }
+    private Long charges(String s){
+        Hashtable<String, Integer> charges=new Hashtable<String, Integer>();
+        charges.put("TwoWheeler", 20);
+        charges.put("FourWheeler", 40);
+        charges.put("SixWheeler", 80);
+        return charges.get(s)*ParkingTime(inTime, outTime);
+    }
+}
+
+class Slot{
+    ArrayList<Integer> unoccupied=new ArrayList<Integer>();
+    ArrayList<Integer> occupied=new ArrayList<Integer>();
+    void slotId(Integer i){
+        if(unoccupied.contains(i)){
+            unoccupied.remove(i);
+            occupied.add(i);
+        }else if(occupied.contains(i)){
+            System.out.println("This slot is unavailable");
+        }else
+            System.out.println("Enter a valid slot id");
+    }
+}
+
+class Parking{
+    void parkVehicle(Vehicle v, Slot s){
+        Integer regno=v.regno;
+        Short floor;
+        Integer slotid;
+        floor=v.floor;
+        slotid=v.slotid;
+        Map<Integer,ParkingCharge> map=new HashMap<Integer,ParkingCharge>();
+    }
+    void getVehicle(Vehicle v,int regno){
+        if(v.regno==regno) {
+
+        }
+    }
+}
+
+class Vehicle{
+    Integer regno;
+    Short floor;
+    Integer slotid;
     void drive(){
 
     }
 }
-class twoWheelers extends vehicle{
-    short floor;
+
+class TwoWheelers extends Vehicle{
+    Short floor;
     /*int slotid[];
     void slotid(){
         for(int i=0;i<30;i++){
@@ -54,11 +85,9 @@ class twoWheelers extends vehicle{
 
     }
 }
-class scooties extends twoWheelers{
-    int regno;
-    Date inTime;
-    Date outTime;
-    int slotid;
+class Scooties extends TwoWheelers{
+    Integer regno;
+    Integer slotid;
     void drive(){
         if(slotid>30) {
             System.out.println("This floor is full");
@@ -66,11 +95,9 @@ class scooties extends twoWheelers{
             System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
-class cycle extends twoWheelers{
-    int regno;
-    Date inTime;
-    Date outTime;
-    int slotid;
+class Cycle extends TwoWheelers{
+    Integer regno;
+    Integer slotid;
     void drive(){
         if(slotid>30) {
             System.out.println("This floor is full");
@@ -78,11 +105,9 @@ class cycle extends twoWheelers{
             System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
-class sportsBike extends twoWheelers{
-    int regno;
-    Date inTime;
-    Date outTime;
-    int slotid;
+class SportsBike extends TwoWheelers{
+    Integer regno;
+    Integer slotid;
     void drive(){
         if(slotid>30) {
             System.out.println("This floor is full");
@@ -90,11 +115,9 @@ class sportsBike extends twoWheelers{
             System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
-class cruiserBike extends twoWheelers{
-    int regno;
-    Date inTime;
-    Date outTime;
-    int slotid;
+class CruiserBike extends TwoWheelers{
+    Integer regno;
+    Integer slotid;
     void drive(){
         if(slotid>30) {
             System.out.println("This floor is full");
@@ -102,8 +125,8 @@ class cruiserBike extends twoWheelers{
             System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
-class fourWheelers extends vehicle{
-    short floor;
+class FourWheelers extends Vehicle{
+    Short floor;
     void floor(short floor) {
         this.floor=floor;
         if (floor == 3 || floor == 4 || floor==6){
@@ -115,11 +138,9 @@ class fourWheelers extends vehicle{
 
     }
 }
-class hatchBack extends fourWheelers{
-    int regno;
-    Date inTime;
-    Date outTime;
-    int slotid;
+class HatchBack extends FourWheelers{
+    Integer regno;
+    Integer slotid;
     void drive(){
         if(slotid>30) {
             System.out.println("This floor is full");
@@ -127,11 +148,9 @@ class hatchBack extends fourWheelers{
             System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
-class sedan extends fourWheelers{
-    int regno;
-    Date inTime;
-    Date outTime;
-    int slotid;
+class Sedan extends FourWheelers{
+    Integer regno;
+    Integer slotid;
     void drive(){
         if(slotid>30) {
             System.out.println("This floor is full");
@@ -139,11 +158,9 @@ class sedan extends fourWheelers{
             System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
-class sUV extends fourWheelers{
-    int regno;
-    Date inTime;
-    Date outTime;
-    int slotid;
+class SUV extends FourWheelers{
+    Integer regno;
+    Integer slotid;
     void drive(){
         if(slotid>30) {
             System.out.println("This floor is full");
@@ -151,8 +168,8 @@ class sUV extends fourWheelers{
             System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
-class sixWheelers extends vehicle{
-    short floor;
+class SixWheelers extends Vehicle{
+    Short floor;
     void floor(short floor) {
         this.floor=floor;
         if (floor == 0){
@@ -160,10 +177,8 @@ class sixWheelers extends vehicle{
         } else
             System.out.println("You are on the wrong floor.");
     }
-    int regno;
-    Date inTime;
-    Date outTime;
-    int slotid;
+    Integer regno;
+    Integer slotid;
     void drive(){
         if(slotid>30) {
             System.out.println("This floor is full");
