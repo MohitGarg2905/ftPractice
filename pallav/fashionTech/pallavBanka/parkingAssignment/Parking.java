@@ -27,13 +27,26 @@ class ParkingCharge {
     }
 }
 
+class Floor {
+    private void floor() {
+        Hashtable<Integer, String> vehiclewisefloor = new Hashtable<Integer, String>();
+        vehiclewisefloor.put(0,"SixWheeler");
+        vehiclewisefloor.put(1, "TwoWheelers");
+        vehiclewisefloor.put(2, "TwoWheelers");
+        vehiclewisefloor.put(3,"FourWheeler");
+        vehiclewisefloor.put(4,"FourWheeler");
+        vehiclewisefloor.put(5, "TwoWheelers");
+    }
+}
+
 class Slot{
     ArrayList<Integer> unoccupied=new ArrayList<Integer>();
     ArrayList<Integer> occupied=new ArrayList<Integer>();
-    void slotId(Integer i){
+    void checkSlotId(Integer i){
         if(unoccupied.contains(i)){
             unoccupied.remove(i);
             occupied.add(i);
+            System.out.println("You have been allotted slot id:" + i);
         }else if(occupied.contains(i)){
             System.out.println("This slot is unavailable");
         }else
@@ -44,145 +57,66 @@ class Slot{
 class Parking{
     void parkVehicle(Vehicle v, Slot s){
         Integer regno=v.regno;
-        Short floor;
         Integer slotid;
-        floor=v.floor;
-        slotid=v.slotid;
-        Map<Integer,ParkingCharge> map=new HashMap<Integer,ParkingCharge>();
+        Short floor;
+        s.checkSlotId(slotid);
     }
     void getVehicle(Vehicle v,int regno){
-        if(v.regno==regno) {
-
-        }
+        Map<Integer,ParkingCharge> Charges=new HashMap<Integer,ParkingCharge>();
     }
 }
 
 class Vehicle{
     Integer regno;
-    Short floor;
-    Integer slotid;
     void drive(){
-
     }
 }
 
 class TwoWheelers extends Vehicle{
-    Short floor;
-    /*int slotid[];
-    void slotid(){
-        for(int i=0;i<30;i++){
-            this.slotid[i]=i+1;
-        }
-    }*/
-    void floor(short floor) {
-        this.floor=floor;
-        if (floor == 1 || floor == 2 || floor==5){
-            System.out.println("You are on floor:" + floor + "This floor is for two wheeler.");
-        } else
-            System.out.println("You are on the wrong floor.");
-    }
     void drive(){
-
     }
 }
 class Scooties extends TwoWheelers{
     Integer regno;
-    Integer slotid;
     void drive(){
-        if(slotid>30) {
-            System.out.println("This floor is full");
-        }else
-            System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
 class Cycle extends TwoWheelers{
     Integer regno;
-    Integer slotid;
     void drive(){
-        if(slotid>30) {
-            System.out.println("This floor is full");
-        }else
-            System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
 class SportsBike extends TwoWheelers{
     Integer regno;
-    Integer slotid;
     void drive(){
-        if(slotid>30) {
-            System.out.println("This floor is full");
-        }else
-            System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
 class CruiserBike extends TwoWheelers{
     Integer regno;
-    Integer slotid;
     void drive(){
-        if(slotid>30) {
-            System.out.println("This floor is full");
-        }else
-            System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
 class FourWheelers extends Vehicle{
-    Short floor;
-    void floor(short floor) {
-        this.floor=floor;
-        if (floor == 3 || floor == 4 || floor==6){
-            System.out.println("You are on floor:" + floor + "This floor is for two wheeler.");
-        } else
-            System.out.println("You are on the wrong floor.");
-    }
     void drive(){
-
     }
 }
 class HatchBack extends FourWheelers{
     Integer regno;
-    Integer slotid;
     void drive(){
-        if(slotid>30) {
-            System.out.println("This floor is full");
-        }else
-            System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
 class Sedan extends FourWheelers{
     Integer regno;
-    Integer slotid;
     void drive(){
-        if(slotid>30) {
-            System.out.println("This floor is full");
-        }else
-            System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
 class SUV extends FourWheelers{
     Integer regno;
-    Integer slotid;
     void drive(){
-        if(slotid>30) {
-            System.out.println("This floor is full");
-        }else
-            System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
 class SixWheelers extends Vehicle{
-    Short floor;
-    void floor(short floor) {
-        this.floor=floor;
-        if (floor == 0){
-            System.out.println("You are on floor:" + floor + "This floor is for two wheeler.");
-        } else
-            System.out.println("You are on the wrong floor.");
-    }
     Integer regno;
-    Integer slotid;
     void drive(){
-        if(slotid>30) {
-            System.out.println("This floor is full");
-        }else
-            System.out.println("Your floor is:" + floor + "Your Slot Id is:" + slotid);
     }
 }
