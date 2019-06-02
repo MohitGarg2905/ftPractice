@@ -1,7 +1,7 @@
 package parking;
 
 import java.util.*;
-import java.lang.NumberFormatException;
+//import java.lang.NumberFormatException;
 class Vehicle{
 	private Integer wheels, typeInt;
 	private Integer floorNumber;
@@ -169,18 +169,19 @@ public class parking {
          return ID;
      }		
     
-    public static Integer getVehicle(Vehicle vehicle) {	
+    public static int getVehicle(Vehicle vehicle) {	
    	    Integer cost = 0;
    	// 09 30 01 03 2019
     // 0  1  2  3   4
-   	    Integer [] arrIn = new Integer [5];   
-   	    Integer [] arrOut = new Integer [5];
+   	    int [] arrIn = new int[5];   
+   	    int [] arrOut = new int[5];
    	    //String [] arrInStrDay = new String [2];
     	String arrInStrDay0 = vehicle.getinTime(); 
     	String arrInStrDay1 = vehicle.getinDate();
     	
-    	String[] arrInStrDate = arrInStrDay0.split("-");
-    	String[] arrInStr = arrInStrDay1.split(":");
+    	String[] arrInStrDate = arrInStrDay1.split("-");
+    	//System.out.print(arrInStrDate);
+    	String[] arrInStr = arrInStrDay0.split(":");
     	arrIn[0] = Integer.parseInt(arrInStr[0]);
     	arrIn[1] = Integer.parseInt(arrInStr[1]);
     	arrIn[2] = Integer.parseInt(arrInStrDate[0]);
@@ -191,21 +192,22 @@ public class parking {
     	String arrOutStrDay0 = vehicle.getoutTime(); 
     	String arrOutStrDay1 = vehicle.getoutDate();
     	
-    	String[] arrOutStrDate = arrOutStrDay0.split("-");
-    	String[] arrOutStr = arrOutStrDay1.split(":");
+    	String[] arrOutStrDate = arrOutStrDay1.split("-");
+    	String[] arrOutStr = arrOutStrDay0.split(":");
     	arrOut[0] = Integer.parseInt(arrOutStr[0]);   //int of 09 string 09:00
     	arrOut[1] = Integer.parseInt(arrOutStr[1]);   // int of 00 string from 09:00
     	arrOut[2] = Integer.parseInt(arrOutStrDate[0]);
     	arrOut[3] = Integer.parseInt(arrOutStrDate[1]);
     	arrOut[4] = Integer.parseInt(arrOutStrDate[2]);
-    	//1 unit for every half hour
+    	//1 unit per hour
     	// ((arrOutStrDate[2]-arrInStrDate[2])*(24)*(30)*(12))
     	cost = cost + (arrOut[0]-arrIn[0]);
+    	
     	cost = cost +  (int)((arrOut[1]-arrIn[1])/(60));
     	cost = cost + ((arrOut[2]-arrIn[2])*(24));
     	cost = cost + ((arrOut[3]-arrIn[3])*(24)*(30));
     	cost = cost + ((arrOut[4]-arrIn[4])*(24)*(30)*(12));
-  	
+    	 //System.out.print(cost);
    	 return cost;          	
     }	
 	
@@ -242,7 +244,7 @@ public class parking {
 	    	  //System.out.print(tempVehicle.in_time(0));
 	    	
 	    	  //tempVehicle.outTime = in.next();
-	    	  Integer netCost = getVehicle(tempVehicle);
+	    	  int netCost = getVehicle(tempVehicle);
 	    	  System.out.print(netCost);
 	      }
 	      
