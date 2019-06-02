@@ -3,10 +3,71 @@ package parking;
 import java.util.*;
 import java.lang.NumberFormatException;
 class Vehicle{
-	Integer wheels, typeInt;
-	Integer floorNumber;
-	String plateNumber, typeString, inTime, outTime;;
+	private Integer wheels, typeInt;
+	private Integer floorNumber;
+	private String plateNumber, typeString, inTime, outTime;;
+	
+	public Integer getwheels(){
+        return wheels;
+    }
+	
+	public void setwheels(Integer newValue){
+        wheels = newValue;
+    }
+	
+	public Integer gettypeInt(){
+        return typeInt;
+    }
+	
+	public void settypeInt(Integer newValue){
+        typeInt = newValue;
+    }
+	
+	public Integer getfloorNumber(){
+        return floorNumber;
+    }
+	
+	public void setfloorNumber(Integer newValue){
+        floorNumber = newValue;
+    }
+	
+	public String getplateNumber(){
+        return plateNumber;
+    }
+	
+	public void setplateNumber(String newValue){
+        plateNumber = newValue;
+    }
+	
+	public String gettypeString(){
+        return typeString;
+    }
+	
+	public void settypeString(String newValue){
+        typeString = newValue;
+    }
+	
+	public String getinTime(){
+        return inTime;
+    }
+	
+	public void setinTime(String newValue){
+        inTime = newValue;
+    }
+	
+	public String getoutTime(){
+        return outTime;
+    }
+	
+	public void setoutTime(String newValue){
+        outTime = newValue;
+    }
+	
 }
+
+
+
+
 
 //class inOut extends Vehicle{
 //	String in_time,out_time;
@@ -54,18 +115,41 @@ public class parking {
 																				        put("mini_truck", 4);
 																				        put("heavy_truck", 5);
 																				     }};
-																     
-    public static Integer[] parkVehicle(Vehicle vehicle, int count) {	
+	
+																				     
+																			     
+																				     
+																				     
+    public static void parkVehicle(Vehicle vehicle) {	
     	 
-    	 //a = wheels
-    	 //b = floorNumber
-    	 //c = slot
-    	
-    	 Integer ID[] = new Integer[3];
-    	 ID[0] = vehicle.wheels;
-    	 ID[1] = vehicle.floorNumber;
-    	 ID[2] = count;
-    	 return ID;          	
+    	 //0 = wheels
+    	 //1 = floorNumber
+    	 //2 = slot
+	    // ArrayList<ArrayList<Integer> > unoccupied =   new ArrayList<ArrayList<Integer> >();
+    	 ArrayList<Integer> count = new ArrayList<Integer>(10);
+    	 Integer key = 0;
+	 	ArrayList<ArrayList<Integer> > occupied =   new ArrayList<ArrayList<Integer> >();
+    	//Id generator
+    	 ArrayList<Integer> ID = new ArrayList<Integer>();
+    	 ID.add(vehicle.getwheels());
+    	 ID.add(vehicle.getfloorNumber());
+    	 ID.add(count.get(key));
+  	 //try to give slot
+    	 boolean ans = occupied.contains(ID); 
+         if (ans)
+         {
+        	 System.out.println("slotoccupied");
+         }
+         else
+         {   	 if(key <10)
+         			{  System.out.println(ID);
+         				occupied.add(ID);
+         				key++;}
+         		else
+         		{
+         			System.out.println("ParkingFull");
+         		}
+         }         	
      }		
     
     public static Double getVehicle(Vehicle vehicle) {	
@@ -74,7 +158,7 @@ public class parking {
     // 0  1  2  3   4
    	    Double [] arrIn = new Double [5];   
    	    Double [] arrOut = new Double [5];
-    	String inStr = vehicle.inTime; 
+    	String inStr = vehicle.getinTime(); 
     	String[] arrInStrDay = inStr.split(" ", 2);  // 01-03-2019 09:30
     	String[] arrInStrDate = arrInStrDay[0].split("-", 3);
     	String[] arrInStr = arrInStrDay[1].split(":", 2);
@@ -83,7 +167,7 @@ public class parking {
     	arrIn[2] = Integer.parseInt(arrInStrDate[0]) + 0.00;
     	arrIn[3] = Integer.parseInt(arrInStrDate[1]) + 0.00;
     	arrIn[4] = Integer.parseInt(arrInStrDate[2]) + 0.00;
-    	String outStr = vehicle.outTime;
+    	String outStr = vehicle.getoutTime();
     	String[] arrOutStrDay = outStr.split(" ", 2);
     	String[] arrOutStrDate = arrOutStrDay[0].split("-", 3);
     	String[] arrOutStr = arrOutStrDay[1].split(":", 2);
@@ -102,24 +186,34 @@ public class parking {
 	
 	public static void main(String[] args) {
 		
-		ArrayList<Vehicle> vehicleList = new ArrayList<Vehicle>();
+		//ArrayList<Vehicle> vehicleList = new ArrayList<Vehicle>();
 		Scanner in = new Scanner(System.in);
 		  
 	      for(int i = 0;i < 2;i++) {
 	    	  Vehicle tempVehicle = new Vehicle();
-	    	  tempVehicle.plateNumber = in.next();
-	    	  tempVehicle.typeInt = in.nextInt();  //integer corresponding to vehicle type
-	    	  tempVehicle.typeString = typeInt.get(tempVehicle.typeInt);  //Vehicle 
-	    	  tempVehicle.wheels = typeString.get(tempVehicle.typeString);  //wheels
-	    	  tempVehicle.floorNumber = floorNumbers.get(tempVehicle.typeString);  //floor number
-	    	  tempVehicle.inTime = in.next();            
-	    	  Integer[] CarId = parkVehicle(tempVehicle,i);
-	    	  System.out.println(tempVehicle.typeString);
+	    	  
+	    	  tempVehicle.setplateNumber(in.next()); 
+	    	  tempVehicle.settypeInt(in.nextInt());   //integer corresponding to vehicle type
+	    	  tempVehicle.settypeString(typeInt.get(tempVehicle.gettypeInt()));
+	    	  tempVehicle.setwheels(typeString.get(tempVehicle.gettypeString()));
+	    	  tempVehicle.setfloorNumber(floorNumbers.get(tempVehicle.gettypeString()));
+	    	  tempVehicle.setinTime(in.next());
+	    	  parkVehicle(tempVehicle);
+	    	  tempVehicle.setoutTime(in.next());
+	    	  
+	    	  //tempVehicle.plateNumber = in.next();
+	    	  //tempVehicle.typeInt = in.nextInt();  //integer corresponding to vehicle type
+	    	  //tempVehicle.typeString = typeInt.get(tempVehicle.typeInt);  //Vehicle 
+	    	  //tempVehicle.wheels = typeString.get(tempVehicle.typeString);  //wheels
+	    	  //tempVehicle.floorNumber = floorNumbers.get(tempVehicle.typeString);  //floor number
+	    	  //tempVehicle.inTime = in.next();            
+	    	  //parkVehicle(tempVehicle);
+	    	  //System.out.println(tempVehicle.typeString);
 	    	  //for(int p=0;p<3;p++)
 	    	  //	{System.out.print(Car_id[p]);}
 	    	  //System.out.print(tempVehicle.in_time(0));
-	    	  vehicleList.add(tempVehicle);
-	    	  tempVehicle.outTime = in.next();
+	    	
+	    	  //tempVehicle.outTime = in.next();
 	    	  Double netCost = getVehicle(tempVehicle);
 	    	  System.out.print(netCost);
 	      }
