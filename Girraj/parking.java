@@ -1,10 +1,16 @@
-package javaapplication1;
-import java.util.*; 
+package parking;
 
+import java.util.*;
+import java.lang.NumberFormatException;
 class Vehicle{
-	int wheels, type_int;
-	String plate_number, in_time, type_string;
+	Integer wheels, typeInt;
+	Integer floorNumber;
+	String plateNumber, typeString, inTime, outTime;;
 }
+
+//class inOut extends Vehicle{
+//	String in_time,out_time;
+//}
 
 //wheel2
 //floor 0 Scooties (0) and cycle (1)
@@ -17,77 +23,105 @@ class Vehicle{
 //floor 5 heavy_truck (7)
 
 public class parking {
-	    
-    private static Hashtable<Integer,String> type_int = new Hashtable<Integer,String>() {{ put(0, "scooties");
-			                                                                   put(1, "cycle");
-										           put(2, "sports_bike");
-											   put(3, "cruiser_bike");
-											   put(4, "normal_car");
-											   put(5, "sports_car");
-											   put(6, "mini_truck");
-											   put(7, "heavy_truck");
-											 }};
-    
-    private static Hashtable<String,Integer> type_string = new Hashtable<String,Integer>() {{ put("scooties", 2);
-											      put("cycle", 2);
-											      put("sports_bike", 2);
-											      put("cruiser_bike", 2);
-											      put("normal_car", 4);
-											      put("sports_car", 4);
-											      put("mini_truck", 6);
-											      put("heavy_truck", 6);
-												}};
-    
-//     public static String id_generator(Vehicle vehicle,int floor_number) {	
-//     	 String ID;
-    	           	
-//      }																	     
-																				     
-    public static int parkVehicle(Vehicle vehicle) {
+	    //integer corresponding to vehicle
+    private static Hashtable<Integer,String> typeInt = new Hashtable<Integer,String>() {{ put(0, "scooties");
+																					    put(1, "cycle");
+																					    put(2, "sports_bike");
+																					    put(3, "cruiser_bike");
+																					    put(4, "normal_car");
+																					    put(5, "sports_car");
+																					    put(6, "mini_truck");
+																					    put(7, "heavy_truck");
+																					 }};
+       //wheels corresponding to vehicle
+    private static Hashtable<String,Integer> typeString = new Hashtable<String,Integer>() {{ put("scooties", 2);
+																				        put("cycle", 2);
+																				        put("sports_bike", 2);
+																				        put("cruiser_bike", 2);
+																				        put("normal_car", 4);
+																				        put("sports_car", 4);
+																				        put("mini_truck", 6);
+																				        put("heavy_truck", 6);
+																				     }};
+		//floor corresponding to vehicle		
+		//If new changes are required put new floorNumbers 																		     
+    private static Hashtable<String,Integer> floorNumbers = new Hashtable<String,Integer>() {{ put("scooties", 0);
+																				        put("cycle", 0);
+																				        put("sports_bike", 1);
+																				        put("cruiser_bike", 1);
+																				        put("normal_car", 2);
+																				        put("sports_car", 3);
+																				        put("mini_truck", 4);
+																				        put("heavy_truck", 5);
+																				     }};
+																     
+    public static Integer[] parkVehicle(Vehicle vehicle, int count) {	
+    	 
+    	 //a = wheels
+    	 //b = floorNumber
+    	 //c = slot
     	
-		int floor_number = 0;
-		
-    	if(vehicle.wheels == 2) {
-    		if(vehicle.type_int == 0 || vehicle.type_int == 1)
-    			floor_number = 0;
-    		else if(vehicle.type_int == 2 || vehicle.type_int == 3)
-    			floor_number = 1;
-    	}
-			
-    	else if(vehicle.wheels == 4) {
-    		if(vehicle.type_int == 4)
-    			floor_number = 2;
-    		else if(vehicle.type_int == 5)
-    			floor_number = 3;
-    	}
-			
-    	else if(vehicle.wheels == 6) {
-    		if(vehicle.type_int == 6)
-    			floor_number = 4;
-    		else if(vehicle.type_int == 7)
-    			floor_number = 5;
-    	}
+    	 Integer ID[] = new Integer[3];
+    	 ID[0] = vehicle.wheels;
+    	 ID[1] = vehicle.floorNumber;
+    	 ID[2] = count;
+    	 return ID;          	
+     }		
+    
+    public static Double getVehicle(Vehicle vehicle) {	
+   	    Integer cost = 0;
+   	// 09 30 01 03 2019
+    // 0  1  2  3   4
+   	    Double [] arrIn = new Double [5];   
+   	    Double [] arrOut = new Double [5];
+    	String inStr = vehicle.inTime; 
+    	String[] arrInStrDay = inStr.split(" ", 2);  // 01-03-2019 09:30
+    	String[] arrInStrDate = arrInStrDay[0].split("-", 3);
+    	String[] arrInStr = arrInStrDay[1].split(":", 2);
+    	arrIn[0] = Integer.parseInt(arrInStr[0]) + 0.00;
+    	arrIn[1] = Integer.parseInt(arrInStr[1]) + 0.00;
+    	arrIn[2] = Integer.parseInt(arrInStrDate[0]) + 0.00;
+    	arrIn[3] = Integer.parseInt(arrInStrDate[1]) + 0.00;
+    	arrIn[4] = Integer.parseInt(arrInStrDate[2]) + 0.00;
+    	String outStr = vehicle.outTime;
+    	String[] arrOutStrDay = outStr.split(" ", 2);
+    	String[] arrOutStrDate = arrOutStrDay[0].split("-", 3);
+    	String[] arrOutStr = arrOutStrDay[1].split(":", 2);
+    	arrOut[0] = Integer.parseInt(arrOutStr[0]) + 0.00;   //int of 09 string 09:00
+    	arrOut[1] = Integer.parseInt(arrOutStr[1]) + 0.00;   // int of 00 string from 09:00
+    	arrOut[2] = Integer.parseInt(arrOutStrDate[0]) + 0.00;
+    	arrOut[3] = Integer.parseInt(arrOutStrDate[1]) + 0.00;
+    	arrOut[4] = Integer.parseInt(arrOutStrDate[2]) + 0.00;
+    	//1 unit for every half hour
+    	cost = cost + (arrOut[0]-arrIn[0]) + (arrOut[1]-arrIn[1])/(60) + (arrOutStrDate[0]-arrInStrDate[0])*(24) + (arrOutStrDate[1]-arrInStrDate[1])*(24)*(30) + (arrOutStrDate[2]-arrInStrDate[2])*(24)*(30)*(12) + 0.00 ;
     	
-    	return floor_number;	
-	}
+    	
+    	
+   	 return cost;          	
+    }	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-		ArrayList<Vehicle> vehicle_list = new ArrayList<Vehicle>();
+		ArrayList<Vehicle> vehicleList = new ArrayList<Vehicle>();
 		Scanner in = new Scanner(System.in);
 		  
 	      for(int i = 0;i < 2;i++) {
-	    	  Vehicle temp = new Vehicle();
-	    	  temp.plate_number = in.next();
-	    	  temp.type_int = in.nextInt();
-	    	  temp.type_string = type_int.get(temp.type_int);
-	    	  temp.wheels = type_string.get(temp.type_string);
-	    	  temp.in_time = in.next();
-	    	  int floor_number = parkVehicle(temp);
-	    	  System.out.println(temp.type_string);
-	    	  System.out.println(floor_number);
-	    	  vehicle_list.add(temp);
+	    	  Vehicle tempVehicle = new Vehicle();
+	    	  tempVehicle.plateNumber = in.next();
+	    	  tempVehicle.typeInt = in.nextInt();  //integer corresponding to vehicle type
+	    	  tempVehicle.typeString = typeInt.get(tempVehicle.typeInt);  //Vehicle 
+	    	  tempVehicle.wheels = typeString.get(tempVehicle.typeString);  //wheels
+	    	  tempVehicle.floorNumber = floorNumbers.get(tempVehicle.typeString);  //floor number
+	    	  tempVehicle.inTime = in.next();            
+	    	  Integer[] CarId = parkVehicle(tempVehicle,i);
+	    	  System.out.println(tempVehicle.typeString);
+	    	  //for(int p=0;p<3;p++)
+	    	  //	{System.out.print(Car_id[p]);}
+	    	  //System.out.print(tempVehicle.in_time(0));
+	    	  vehicleList.add(tempVehicle);
+	    	  tempVehicle.outTime = in.next();
+	    	  Double netCost = getVehicle(tempVehicle);
+	    	  System.out.print(netCost);
 	      }
 	      
 	}
