@@ -5,7 +5,7 @@ import java.lang.NumberFormatException;
 class Vehicle{
 	private Integer wheels, typeInt;
 	private Integer floorNumber;
-	private String plateNumber, typeString, inTime, outTime;;
+	private String plateNumber, typeString, inTime, outTime, inDate, outDate;
 	
 	public Integer getwheels(){
         return wheels;
@@ -55,12 +55,28 @@ class Vehicle{
         inTime = newValue;
     }
 	
+	public String getinDate(){
+        return inDate;
+    }
+	
+	public void setinDate(String newValue){
+        inDate = newValue;
+    }
+	
 	public String getoutTime(){
         return outTime;
     }
 	
 	public void setoutTime(String newValue){
         outTime = newValue;
+    }
+	
+	public String getoutDate(){
+        return outDate;
+    }
+	
+	public void setoutDate(String newValue){
+        outDate = newValue;
     }
 	
 }
@@ -125,14 +141,14 @@ public class parking {
     	 //1 = floorNumber
     	 //2 = slot
 	    // ArrayList<ArrayList<Integer> > unoccupied =   new ArrayList<ArrayList<Integer> >();
-    	 ArrayList<Integer> count = new ArrayList<Integer>(10);
+    	// ArrayList<Integer> count = new ArrayList<Integer>(10);
     	 Integer key = 0;
 	 	
     	//Id generator
     	 ArrayList<Integer> ID = new ArrayList<Integer>();
     	 ID.add(vehicle.getwheels());
     	 ID.add(vehicle.getfloorNumber());
-    	 ID.add(count.get(key));
+    	 ID.add(key);
   	 //try to give slot
     	 boolean ans = occupied.contains(ID); 
          if (ans)
@@ -153,32 +169,42 @@ public class parking {
          return ID;
      }		
     
-    public static Double getVehicle(Vehicle vehicle) {	
+    public static Integer getVehicle(Vehicle vehicle) {	
    	    Integer cost = 0;
    	// 09 30 01 03 2019
     // 0  1  2  3   4
-   	    Double [] arrIn = new Double [5];   
-   	    Double [] arrOut = new Double [5];
-    	String inStr = vehicle.getinTime(); 
-    	String[] arrInStrDay = inStr.split(" ", 2);  // 01-03-2019 09:30
-    	String[] arrInStrDate = arrInStrDay[0].split("-", 3);
-    	String[] arrInStr = arrInStrDay[1].split(":", 2);
-    	arrIn[0] = Integer.parseInt(arrInStr[0]) + 0.00;
-    	arrIn[1] = Integer.parseInt(arrInStr[1]) + 0.00;
-    	arrIn[2] = Integer.parseInt(arrInStrDate[0]) + 0.00;
-    	arrIn[3] = Integer.parseInt(arrInStrDate[1]) + 0.00;
-    	arrIn[4] = Integer.parseInt(arrInStrDate[2]) + 0.00;
-    	String outStr = vehicle.getoutTime();
-    	String[] arrOutStrDay = outStr.split(" ", 2);
-    	String[] arrOutStrDate = arrOutStrDay[0].split("-", 3);
-    	String[] arrOutStr = arrOutStrDay[1].split(":", 2);
-    	arrOut[0] = Integer.parseInt(arrOutStr[0]) + 0.00;   //int of 09 string 09:00
-    	arrOut[1] = Integer.parseInt(arrOutStr[1]) + 0.00;   // int of 00 string from 09:00
-    	arrOut[2] = Integer.parseInt(arrOutStrDate[0]) + 0.00;
-    	arrOut[3] = Integer.parseInt(arrOutStrDate[1]) + 0.00;
-    	arrOut[4] = Integer.parseInt(arrOutStrDate[2]) + 0.00;
+   	    Integer [] arrIn = new Integer [5];   
+   	    Integer [] arrOut = new Integer [5];
+   	    //String [] arrInStrDay = new String [2];
+    	String arrInStrDay0 = vehicle.getinTime(); 
+    	String arrInStrDay1 = vehicle.getinDate();
+    	
+    	String[] arrInStrDate = arrInStrDay0.split("-");
+    	String[] arrInStr = arrInStrDay1.split(":");
+    	arrIn[0] = Integer.parseInt(arrInStr[0]);
+    	arrIn[1] = Integer.parseInt(arrInStr[1]);
+    	arrIn[2] = Integer.parseInt(arrInStrDate[0]);
+    	arrIn[3] = Integer.parseInt(arrInStrDate[1]);
+    	arrIn[4] = Integer.parseInt(arrInStrDate[2]);
+    	
+    
+    	String arrOutStrDay0 = vehicle.getoutTime(); 
+    	String arrOutStrDay1 = vehicle.getoutDate();
+    	
+    	String[] arrOutStrDate = arrOutStrDay0.split("-");
+    	String[] arrOutStr = arrOutStrDay1.split(":");
+    	arrOut[0] = Integer.parseInt(arrOutStr[0]);   //int of 09 string 09:00
+    	arrOut[1] = Integer.parseInt(arrOutStr[1]);   // int of 00 string from 09:00
+    	arrOut[2] = Integer.parseInt(arrOutStrDate[0]);
+    	arrOut[3] = Integer.parseInt(arrOutStrDate[1]);
+    	arrOut[4] = Integer.parseInt(arrOutStrDate[2]);
     	//1 unit for every half hour
-    	cost = cost + (arrOut[0]-arrIn[0]) + (arrOut[1]-arrIn[1])/(60) + (arrOutStrDate[0]-arrInStrDate[0])*(24) + (arrOutStrDate[1]-arrInStrDate[1])*(24)*(30) + (arrOutStrDate[2]-arrInStrDate[2])*(24)*(30)*(12) + 0.00 ;
+    	// ((arrOutStrDate[2]-arrInStrDate[2])*(24)*(30)*(12))
+    	cost = cost + (arrOut[0]-arrIn[0]);
+    	cost = cost +  (int)((arrOut[1]-arrIn[1])/(60));
+    	cost = cost + ((arrOut[2]-arrIn[2])*(24));
+    	cost = cost + ((arrOut[3]-arrIn[3])*(24)*(30));
+    	cost = cost + ((arrOut[4]-arrIn[4])*(24)*(30)*(12));
   	
    	 return cost;          	
     }	
@@ -198,8 +224,10 @@ public class parking {
 	    	  tempVehicle.setwheels(typeString.get(tempVehicle.gettypeString()));
 	    	  tempVehicle.setfloorNumber(floorNumbers.get(tempVehicle.gettypeString()));
 	    	  tempVehicle.setinTime(in.next());
+	    	  tempVehicle.setinDate(in.next());
 	    	  carId = parkVehicle(tempVehicle);
 	    	  tempVehicle.setoutTime(in.next());
+	    	  tempVehicle.setoutDate(in.next());
 	    	  occupied.remove(carId);
 	    	  //tempVehicle.plateNumber = in.next();
 	    	  //tempVehicle.typeInt = in.nextInt();  //integer corresponding to vehicle type
@@ -214,7 +242,7 @@ public class parking {
 	    	  //System.out.print(tempVehicle.in_time(0));
 	    	
 	    	  //tempVehicle.outTime = in.next();
-	    	  Double netCost = getVehicle(tempVehicle);
+	    	  Integer netCost = getVehicle(tempVehicle);
 	    	  System.out.print(netCost);
 	      }
 	      
