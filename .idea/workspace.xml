@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ae97275-972b-48bb-b403-f8edd46c7d2c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Parking.java" beforeDir="false" afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Parking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/ParkingTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Services/Parking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Constants/VehicleConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Constants/VehicleConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Parking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Slot.java" beforeDir="false" afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Slot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/FourWheelers.java" beforeDir="false" afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/FourWheelers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/SUV.java" beforeDir="false" afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/SUV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/SixWheelers.java" beforeDir="false" afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/SixWheelers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/TwoWheelers.java" beforeDir="false" afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/TwoWheelers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Services/ParkingCharge.java" beforeDir="false" afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Services/ParkingCharge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Services/ParkingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/ChargesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/ChargesDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/Floordao.java" beforeDir="false" afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/FloorDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/Slotdao.java" beforeDir="false" afterPath="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/SlotDao.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,16 +28,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Parking.java">
+        <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Services/Parking.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#623#624#0" expanded="true" />
+                <element signature="e#642#643#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Services/ParkingCharge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,15 +59,113 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ftPractice.git.iml">
+        <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/ParkingTime.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding>
+                <element signature="e#326#327#0" expanded="true" />
+                <element signature="e#356#357#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Slot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#247#248#0" expanded="true" />
+                <element signature="e#283#284#0" expanded="true" />
+                <element signature="e#670#671#0" expanded="true" />
+                <element signature="e#721#722#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Constants/VehicleConstant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/ChargesDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/FloorDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/SlotDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="31" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Floor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Vehicle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+              <folding>
+                <element signature="e#284#285#0" expanded="true" />
+                <element signature="e#316#317#0" expanded="true" />
+                <element signature="e#258#259#0" expanded="true" />
+                <element signature="e#286#287#0" expanded="true" />
+                <element signature="e#472#473#0" expanded="true" />
+                <element signature="e#506#507#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,7 +173,30 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Slot.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/VehicleType1.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/VehicleType.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Floor.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/ParkingCharge.java" />
         <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Parking.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/VehicleConstant.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Vehicle.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/ChargesDao.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Vehicle.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/TwoWheelers.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/FourWheelers.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/SixWheelers.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/SUV.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Services/ParkingService.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/Slotdao.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/Floordao.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Floor.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Constants/VehicleConstant.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Services/ParkingCharge.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Parking.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Services/Parking.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/SlotDao.java" />
+        <option value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Slot.java" />
       </list>
     </option>
   </component>
@@ -61,6 +211,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -87,15 +238,47 @@
               <item name="pallavBanka" type="462c0819:PsiDirectoryNode" />
               <item name="parkingAssignment" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ftPractice.git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ftPractice.git" type="462c0819:PsiDirectoryNode" />
+              <item name="pallav" type="462c0819:PsiDirectoryNode" />
+              <item name="pallavBanka" type="462c0819:PsiDirectoryNode" />
+              <item name="parkingAssignment" type="462c0819:PsiDirectoryNode" />
+              <item name="Constants" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ftPractice.git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ftPractice.git" type="462c0819:PsiDirectoryNode" />
+              <item name="pallav" type="462c0819:PsiDirectoryNode" />
+              <item name="pallavBanka" type="462c0819:PsiDirectoryNode" />
+              <item name="parkingAssignment" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ftPractice.git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ftPractice.git" type="462c0819:PsiDirectoryNode" />
+              <item name="pallav" type="462c0819:PsiDirectoryNode" />
+              <item name="pallavBanka" type="462c0819:PsiDirectoryNode" />
+              <item name="parkingAssignment" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ftPractice.git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ftPractice.git" type="462c0819:PsiDirectoryNode" />
+              <item name="pallav" type="462c0819:PsiDirectoryNode" />
+              <item name="pallavBanka" type="462c0819:PsiDirectoryNode" />
+              <item name="parkingAssignment" type="462c0819:PsiDirectoryNode" />
+              <item name="Services" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Parking.java" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/VehicleType.java" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -126,16 +309,13 @@
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2590604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -143,30 +323,175 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3297587" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.3297587" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3297587" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ftPractice.git.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Parking.java">
+    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/SixWheelers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        <state relative-caret-position="204">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/TwoWheelers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#223#224#0" expanded="true" />
+            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/SUV.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/vehicles/FourWheelers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Floor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Vehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding>
+            <element signature="e#284#285#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+            <element signature="e#286#287#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Constants/VehicleConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/ChargesDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/FloorDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Services/ParkingCharge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/ParkingTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/dao/SlotDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Models/Slot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#247#248#0" expanded="true" />
+            <element signature="e#283#284#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#721#722#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pallav/fashionTech/pallavBanka/parkingAssignment/Services/Parking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
           </folding>
         </state>
       </provider>

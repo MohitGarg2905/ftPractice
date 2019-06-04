@@ -1,21 +1,28 @@
-package fashionTech.pallavBanka.parkingAssignment;
+package fashionTech.pallavBanka.parkingAssignment.Models;
 
 import java.util.LinkedList;
+import fashionTech.pallavBanka.parkingAssignment.dao.SlotDao;
 
-public class Slot{
-    LinkedList<String> occupied=new LinkedList();
-    boolean occupySlot(Integer i) {
-        if (occupied.get(i)==null) {
-            occupied.add(i,"occupied");
-            System.out.println("You have been allotted slot id:" + i);
-            return true;
-        } else if (occupied.get(i)=="occupied") {
-            System.out.println("This slot is unavailable");
-            return false;
-        } else {
-            System.out.println("Enter a valid slot id");
-            return false;
+public class Slot extends SlotDao {
+    Integer slotId;
+
+    public Slot(Integer slotId) {
+        this.slotId = slotId;
+    }
+
+    public Integer getSlotId() {
+        if (SlotDao.checkAvailability(slotId)) {
+            return slotId;
+        } else
+            return null;
+    }
+    public void setOccupied(){
+        if(SlotDao.checkAvailability(slotId)){
+            SlotDao.occupied.add(slotId-1,"occupied");
         }
+    }
+    public void setUnoccupied(Integer slotId){
+        SlotDao.occupied.add(slotId-1,null);
     }
 }
 

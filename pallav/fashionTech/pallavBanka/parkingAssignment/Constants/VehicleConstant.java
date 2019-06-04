@@ -1,22 +1,7 @@
-package fashionTech.pallavBanka.parkingAssignment;
+package fashionTech.pallavBanka.parkingAssignment.Constants;
 
 public class VehicleConstant {
-    enum VehicleType{
+    public enum VehicleType{
         twowheeler,fourwheeler,sixwheeler
-    }
-}
-class TwoWheelerConstant {
-    enum TwoWheelerType{
-        Scooties,Cycle, SportsBike, CruiserBike
-    }
-}
-class FourWheelerConstant {
-    enum FourWheelerType{
-        Hatchback, Sedan, SUV
-    }
-}
-class SixWheelerConstant {
-    enum SixWheelerType{
-        minitruck
     }
 }

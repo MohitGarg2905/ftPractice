@@ -1,25 +1,26 @@
-package fashionTech.pallavBanka.parkingAssignment;
+package fashionTech.pallavBanka.parkingAssignment.Models;
 
-public class Vehicle {
-    Integer regno;
-    void VehicleInfo(Integer regno,VehicleConstant.VehicleType vehicleType,TwoWheelerConstant.TwoWheelerType twoWheelerType){
+import fashionTech.pallavBanka.parkingAssignment.Constants.VehicleConstant;
 
+abstract public class Vehicle {
+    private Integer regNo;
+    protected VehicleConstant.VehicleType vehicleType;
+
+    public Vehicle(Integer regNo){
+        this.regNo=regNo;
     }
-    void drive(){
+
+    public Integer getRegNo() {
+        return regNo;
     }
+
+    public VehicleConstant.VehicleType getVehicleType() {
+        return vehicleType;
+    }
+
+    abstract protected void setVehicleType();
+
+    abstract public void drive();
 }
 
-class TwoWheelers extends Vehicle{
-    void drive(){
-    }
-}
 
-class FourWheelers extends Vehicle{
-    void drive(){
-    }
-}
-
-class SixWheelers extends Vehicle{
-    void drive(){
-    }
-}
