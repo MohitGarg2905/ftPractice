@@ -2,7 +2,7 @@ package fashionTech.pallavBanka.parkingAssignment;
 
 public class Vehicle {
     Integer regno;
-    void VehicleInfo(Integer regno,VehicleConstant.VehicleType vehicleType,){
+    void VehicleInfo(Integer regno,VehicleConstant.VehicleType vehicleType,TwoWheelerConstant.TwoWheelerType twoWheelerType){
 
     }
     void drive(){
